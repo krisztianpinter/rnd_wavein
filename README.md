@@ -41,15 +41,20 @@ that malicious programs are not running on the system, not even in user mode.
 command line options
 ====================
 
-rnd_wavein <size> <output> [-R] [-S<samples>] [-B<block>] -D<device>
+<b>rnd_wavein</b> &lt;size&gt; &lt;output&gt; [-R] [-S&lt;samples&gt;] [-B&lt;block&gt;] -D&lt;device&gt;
 
-<output> is either filename or * for stdout.
-<size> is the demanded amount of data in kilobytes.
+&lt;output&gt; is either filename or * for stdout.
+
+&lt;size&gt; is the demanded amount of data in kilobytes.
+
 -R writes unwhitened raw data. -S and -B ignored.
+
 -S sets the number of samples to absorb before squeezing a block.
    default is 256
+   
 -B sets the amount of data squeezed at a time, in bytes. default is 168.
--D sets the recording device. <device> can be either #<number> or device name.
+
+-D sets the recording device. &lt;device&gt; can be either #number or device name.
    #number goes from 0 to the number of available recording devices minus one.
    if omitted, the default device is used.
 
@@ -57,7 +62,7 @@ notes on parameters
 -------------------
 
 you should specify a parameter for S to have at least 128 bit entropy. if you
-estimate your entropy to be 0.5 bit per sample, specify -S256.
+estimate your entropy to be at least 0.5 bit per sample, specify -S256.
 
 the -B parameter can determines the speed but also the recovery time from a
 compromised internal state. the data production rate can be calculated with:
